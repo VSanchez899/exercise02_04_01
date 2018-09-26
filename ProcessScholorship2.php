@@ -29,10 +29,24 @@
         return $retval;
     }
 
+    function redisplayForm($fieldName, $lastname){
+    ?>
+        <h2 style="text-align: center">Scholorship Form</h2>
+    <form name="Scholorship" action="ProcessScholorship2.php" method="post">
+        <p>First name: <input type="text" name="fName" value=<?php echo "$firstname";?>></p>
+        <p>Last name: <input type="text" name="lName"></p>
+        <p>
+            <input type="reset" value="Clear Form">&nbsp;&nbsp;
+            <input type="submit" value="Send Form">
+        </p>
+    </form>
+    <?php
+    }
      $firstname = validateInput($_POST['fName'], "First Name");
      $lastname = validateInput($_POST['lName'], "Last Name");
      if ($errorcount > 0) {
-         echo "$errorcount errors: Please use the \"Back\" button to re-enter the data. <br>\n";
+         echo "$errorcount errors: Please re-enter the information below.<br>\n";
+         redisplayForm($firstname, $lastname);
      }else {
         echo "Thank you for filling out the scholorship form, " . $firstname . " " . $lastname . ".";    
      }
