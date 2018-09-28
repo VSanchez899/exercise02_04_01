@@ -29,12 +29,12 @@
         return $retval;
     }
 
-    function redisplayForm($fieldName, $lastname){
+    function redisplayForm($firstname, $lastname){
     ?>
         <h2 style="text-align: center">Scholorship Form</h2>
     <form name="Scholorship" action="ProcessScholorship2.php" method="post">
         <p>First name: <input type="text" name="fName" value="<?php echo $firstname;?>"></p>
-        <p>Last name: <input type="text" name="lName"></p>
+        <p>Last name: <input type="text" name="lName" value="<?php echo $lastname;?>"></p>
         <p>
             <input type="reset" value="Clear Form">&nbsp;&nbsp;
             <input type="submit" value="Send Form">
