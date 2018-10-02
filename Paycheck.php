@@ -15,16 +15,16 @@ function calWage(){
         $overHours = ($hours - 40);
         $overtime = (1.5 * $wage);
          $totalGross = (40 * $wage);
-         $netPay = ($overHours * $overtime) + $totalNum;
-        echo "<p> $netPay is your paycheck includeing overtime</p>";
+         $netPay = ($overHours * $overtime) + $totalGross;
+        echo "<p style='text-align: center;'> \$$netPay is your paycheck including overtime</p>";
     }else{
-        $hours * $wage = $noOvertime;
-        echo "<p style='text-align: center;'>you made this much $noOvertime but didn't have any overtime pay";
+        $noOvertime = ($hours * $wage);
+        echo "<p style='text-align: center;'>you made this much \$$noOvertime but didn't have any overtime pay";
     }
 }
 calWage();
 ?>    
-<li><a href="Paycheck.html">Go Home</a></li>
+<li style="text-align: center;"><a href="Paycheck.html">Go Home</a></li>
 </body>
 </html>
 
